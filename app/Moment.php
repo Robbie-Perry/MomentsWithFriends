@@ -14,5 +14,13 @@ class Moment extends Model
 
     ];
 
+    public function scopeIsPublic($query) {
+        return $query->where('private', false);
+    }
+
+    public function scopeIsPrivate($query) {
+        return $query->where('private', true);
+    }
+
 
 }

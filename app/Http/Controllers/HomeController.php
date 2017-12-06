@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Moment;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $moments = Moment::all();
+        return view('home', compact('moments'));
+    }
+
+    public function add()
+    {
+        return view ('add');
     }
 }
