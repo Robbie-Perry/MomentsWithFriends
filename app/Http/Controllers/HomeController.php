@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Moment;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,12 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $moments = Moment::all();
+        $moments = Moment::userMoments(Auth::id())->get();
         return view('home', compact('moments'));
-    }
-
-    public function add()
-    {
-        return view ('add');
     }
 }

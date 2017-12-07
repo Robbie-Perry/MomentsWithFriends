@@ -12,6 +12,16 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .privacy {
+            font-size: 10pt;
+            color: #999999;
+        }
+
+        .moment-panel {
+            padding: 0px;
+        }
+    </style>
 </head>
 <body>
     <div id="app">

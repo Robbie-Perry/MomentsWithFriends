@@ -18,8 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/add', 'HomeController@add')->name('add');
 
-Route::group(['prefix' => '/{username}'], function () {
-    Route::get('/moments', 'MomentController@index')->name('moments');
-});
+Route::get('/add', 'MomentController@add')->name('add');
+Route::post('/store', 'MomentController@update')->name('store');
+
+Route::get('/user/{username}', 'UserController@index')->name('user');

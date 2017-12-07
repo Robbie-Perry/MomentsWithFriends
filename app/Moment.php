@@ -15,12 +15,10 @@ class Moment extends Model
     ];
 
     public function scopeIsPublic($query) {
-        return $query->where('private', false);
+        return $query->where('private', 0);
     }
 
-    public function scopeIsPrivate($query) {
-        return $query->where('private', true);
+    public function scopeUserMoments($query, $userId) {
+        return $query->where('tag_id', $userId)->orWhere('user_id', $userId);
     }
-
-
 }

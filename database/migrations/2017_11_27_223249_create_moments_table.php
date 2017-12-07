@@ -20,8 +20,8 @@ class CreateMomentsTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->boolean('private');
-            $table->integer('tag_id')->unsigned()->nullable();
-            $table->foreign('tag_id')->references('id')->on('users');
+            //$table->integer('tag_id')->unsigned()->nullable();
+            //$table->foreign('tag_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
